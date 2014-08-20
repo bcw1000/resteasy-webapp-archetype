@@ -1,0 +1,25 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+                http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+        version="3.0">
+    <display-name>${symbol_dollar}{project.artifactId}</display-name>
+    <context-param>
+        <param-name>resteasy.guice.modules</param-name>
+        <param-value>${package}.RootModule</param-value>
+    </context-param>
+    <listener>
+        <listener-class>org.jboss.resteasy.plugins.guice.GuiceResteasyBootstrapServletContextListener</listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>resteasy-servlet</servlet-name>
+        <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>resteasy-servlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+</web-app>

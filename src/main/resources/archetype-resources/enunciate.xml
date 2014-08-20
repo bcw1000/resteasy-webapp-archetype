@@ -1,0 +1,11 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<enunciate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="http://enunciate.codehaus.org/schemas/enunciate-1.29.xsd">
+    <modules>
+        <ruby disabled="false"/>
+        <csharp disableCompile="false"/>
+        <spring-app disabled="true"/>
+    </modules>
+</enunciate>
