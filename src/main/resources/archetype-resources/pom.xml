@@ -7,7 +7,7 @@
     <version>${version}</version>
     <packaging>war</packaging>
 
-    <name>basic-webapp-archetype</name>
+    <name>${artifactId}</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
