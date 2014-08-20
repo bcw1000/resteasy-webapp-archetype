@@ -44,11 +44,13 @@ public class RootModule extends AbstractModule {
         // Load from class-path
         ClassLoader loader = RootModule.class.getClassLoader();
         URL url = loader.getResource(CONF_FILE);
-        properties.load(url.openStream());
+        if(url != null) {
+            properties.load(url.openStream());
+        }
 
         // from file
         String propFile = System.getProperty(CONF_PARAM);
-        if(null != propFile) {
+        if(propFile != null) {
             properties.load(new FileInputStream(propFile));
         }
 
